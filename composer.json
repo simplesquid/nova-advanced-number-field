@@ -1,6 +1,5 @@
 {
     "name": "simplesquid/nova-advanced-number-field",
-    "version": "0.0.4",
     "license": "MIT",
     "description": "A Laravel Nova field.",
     "keywords": [
