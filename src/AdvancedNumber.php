@@ -19,7 +19,7 @@ class AdvancedNumber extends Number
     /**
      * The number of decimals to be displayed.
      *
-     * @var integer
+     * @var int
      */
     private $decimals = 2;
 
@@ -60,7 +60,7 @@ class AdvancedNumber extends Number
         $this->decimals($this->decimals)
              ->textAlign('right')
              ->displayUsing(function ($value) {
-                 return !is_null($value) ? $this->prefix . number_format($value, $this->decimals, $this->dec_point, $this->thousands_sep) . $this->suffix : null;
+                 return ! is_null($value) ? $this->prefix.number_format($value, $this->decimals, $this->dec_point, $this->thousands_sep).$this->suffix : null;
              });
     }
 
@@ -81,7 +81,7 @@ class AdvancedNumber extends Number
     /**
      * Sets the number of decimal points to be used as well as the step value.
      *
-     * @param  integer  $decimals
+     * @param  int  $decimals
      *
      * @return $this
      */
