@@ -60,7 +60,7 @@ class AdvancedNumber extends Number
         $this->decimals($this->decimals)
              ->textAlign('right')
              ->displayUsing(function ($value) {
-                 return ! is_null($value) ? $this->prefix.number_format($value, $this->decimals, $this->dec_point, $this->thousands_sep).$this->suffix : null;
+                 return ! is_null($value) ? $this->prefix . number_format($value, $this->decimals, $this->dec_point, $this->thousands_sep) . $this->suffix : null;
              });
     }
 
