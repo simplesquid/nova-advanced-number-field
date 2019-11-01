@@ -1,37 +1,53 @@
 {
     "name": "simplesquid/nova-advanced-number-field",
-    "license": "MIT",
-    "description": "A Laravel Nova field.",
+    "description": "A Laravel Nova field which adds additional functionality to the default Number field.",
     "keywords": [
+        "simplesquid",
         "laravel",
         "nova",
-        "number"
+        "field",
+        "number",
+        "nova-advanced-number-field"
     ],
+    "homepage": "https://github.com/simplesquid/nova-advanced-number-field",
+    "license": "MIT",
     "authors": [
         {
             "name": "Matthew Poulter",
             "email": "matthew.poulter@simplesquid.co.za",
+            "homepage": "https://simplesquid.co.za/",
             "role": "Developer"
         }
     ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        }
+    ],
     "require": {
-        "php": ">=7.1.0"
+        "php": "^7.3",
+        "laravel/nova": "^2.0"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.3",
+        "orchestra/testbench": "^3.8|^4.0",
+        "phpunit/phpunit": "^8.2"
     },
     "autoload": {
         "psr-4": {
-            "SimpleSquid\\Nova\\Fields\\AdvancedNumber\\": "src/"
+            "SimpleSquid\\Nova\\Fields\\AdvancedNumber\\": "src"
         }
     },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "SimpleSquid\\Nova\\Fields\\AdvancedNumber\\FieldServiceProvider"
-            ]
+    "autoload-dev": {
+        "psr-4": {
+            "SimpleSquid\\Skeleton\\Tests\\": "tests"
         }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
     },
     "config": {
         "sort-packages": true
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
