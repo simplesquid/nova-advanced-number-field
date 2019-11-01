@@ -23,3 +23,7 @@ All notable changes to `nova-advanced-number-field` will be documented in this f
 - Update from package template.
 - Refactor and remove unnecessary code.
 - Add tests.
+
+## 1.1.1 - 2019-11-01
+
+- Fix minimum Nova version.
