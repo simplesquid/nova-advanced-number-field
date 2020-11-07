@@ -84,22 +84,6 @@ class AdvancedNumber extends Number
     }
 
     /**
-     * Sets the number of decimal points to be used as well as the step value.
-     *
-     * @param  int  $decimals
-     *
-     * @return $this
-     */
-    public function asBytes()
-    {
-        $this->decimals = $decimals;
-
-        $this->step((string) (0.1 ** $this->decimals));
-
-        return $this;
-    }
-
-    /**
      * Sets the decimal point symbol to be used when displaying the number.
      *
      * @param  string  $dec_point
