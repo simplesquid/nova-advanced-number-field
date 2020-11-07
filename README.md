@@ -19,13 +19,14 @@ composer require simplesquid/nova-advanced-number-field
 
 ## Usage
 
-The `AdvancedNumber` field provides an additional 5 methods to the default `Number` field, namely:
+The `AdvancedNumber` field provides an additional 6 methods to the default `Number` field, namely:
 
 - `->prefix('$')`: Sets the prefix to be used when displaying the number.
 - `->thousandsSeparator(' ')`: Set the thousands separator symbol to be used when displaying the number.
 - `->decimalPoint('.')`: Sets the decimal point symbol to be used when displaying the number.
 - `->decimals(3)`: Sets the number of decimal points to be used as well as the step value.
 - `->suffix('%')`: Sets the suffix to be used when displaying the number.
+- `->bytes()`: Output the number to byte major units, i.e. KiB, MiB, GiB, or TiB.
 
 You can use the field in your Nova resource like so:
 
@@ -53,6 +54,11 @@ class User extends Resource
                 ->suffix('%')
                 ->min(0)->max(100),
 
+            // Output bytes in major units:
+            AdvancedNumber::make('Bandwidth Used')
+                ->bytes()
+                ->sortable(),
+            
             // ...
         ];
     }

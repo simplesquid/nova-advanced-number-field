@@ -114,4 +114,46 @@ class AdvancedNumberTest extends TestCase
 
         $this->assertEquals(12345.678, $this->field->value);
     }
+
+    /** @test */
+    public function gib_field_resolves_to_gib_bytes_when_appending_bytes_method()
+    {    
+        $this->field->bytes();
+
+        $this->field->resolveForDisplay(['number_field' => 9626480640.00]);
+
+        $this->assertEquals('8.97 GiB', $this->field->value);
+
+    }
+
+    /** @test */
+    public function mib_field_resolves_to_mib_bytes_when_appending_bytes_method()
+    {    
+        $this->field->bytes();
+
+        $this->field->resolveForDisplay(['number_field' => 380416000.00]);
+
+        $this->assertEquals('362.79 MiB', $this->field->value);
+    }
+
+     /** @test */
+     public function kib_field_resolves_to_kib_bytes_when_appending_bytes_method()
+     {    
+         $this->field->bytes();
+ 
+         $this->field->resolveForDisplay(['number_field' => 8192.00]);
+ 
+         $this->assertEquals('8.00 KiB', $this->field->value);
+     }
+
+    /** @test */
+    public function mib_field_resolves_to_mib_bytes_and_one_decimal_when_appending_bytes_and_decimal_methods()
+    {    
+        $this->field->bytes()->decimals(1);
+
+        $this->field->resolveForDisplay(['number_field' => 380416000.00]);
+
+        $this->assertEquals('362.8 MiB', $this->field->value);
+    }
+
 }
