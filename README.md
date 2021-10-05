@@ -1,7 +1,6 @@
 # An advanced number field for Laravel Nova
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/simplesquid/nova-advanced-number-field.svg?style=flat-square)](https://packagist.org/packages/simplesquid/nova-advanced-number-field)
-[![Build Status](https://img.shields.io/travis/simplesquid/nova-advanced-number-field/master.svg?style=flat-square)](https://travis-ci.org/simplesquid/nova-advanced-number-field)
 [![MIT License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Total Downloads](https://img.shields.io/packagist/dt/simplesquid/nova-advanced-number-field.svg?style=flat-square)](https://packagist.org/packages/simplesquid/nova-advanced-number-field)
 
