@@ -24,9 +24,7 @@ class AdvancedNumberTest extends TestCase
     /** @test */
     public function field_defaults_to_step_of_two_decimal_places()
     {
-        $this->assertObjectHasAttribute('step', $this->field);
-
-        $this->assertEquals('0.01', $this->field->step);
+        $this->assertEquals('0.01', $this->field->step ?? $this->field->meta['step']);
     }
 
     /** @test */
