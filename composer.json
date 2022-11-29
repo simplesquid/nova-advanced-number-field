@@ -28,7 +28,7 @@
     "require": {
         "php": "^8.0",
         "illuminate/support": "^9.0",
-        "laravel/nova": "^3.0|^4.0"
+        "laravel/nova": "^4.0"
     },
     "require-dev": {
         "nunomaduro/collision": "^6.1",

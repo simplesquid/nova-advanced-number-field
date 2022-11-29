@@ -5,6 +5,7 @@ All notable changes to `nova-advanced-number-field` will be documented in this f
 ## 3.0.0 - 2022-11-29
 
 - Laravel v9 is now required
+- Laravel Nova v4 is now required
 - PHP 8.0 or higher is now required
 - Add type-hinting
 - Swap to GitHub Actions
