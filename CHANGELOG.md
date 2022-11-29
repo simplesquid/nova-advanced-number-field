@@ -1,4 +1,4 @@
-# Changelog
+# Changelog 
 
 All notable changes to `nova-advanced-number-field` will be documented in this file.
 
