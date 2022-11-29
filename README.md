@@ -1,12 +1,14 @@
 # An advanced number field for Laravel Nova
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/simplesquid/nova-advanced-number-field.svg?style=flat-square)](https://packagist.org/packages/simplesquid/nova-advanced-number-field)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/simplesquid/nova-advanced-number-field/Run%20tests?label=tests)](https://github.com/simplesquid/nova-advanced-number-field/actions?query=workflow%3A"Run+tests"+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/simplesquid/nova-advanced-number-field/Check%20&%20fix%20styling?label=code%20style)](https://github.com/simplesquid/nova-advanced-number-field/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![MIT License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Total Downloads](https://img.shields.io/packagist/dt/simplesquid/nova-advanced-number-field.svg?style=flat-square)](https://packagist.org/packages/simplesquid/nova-advanced-number-field)
 
 A Laravel Nova field which adds additional functionality to the default Number field by using PHP's `number_format()` function.
 
-![Screenshot of the advanced number field](https://github.com/simplesquid/nova-advanced-number-field/raw/master/docs/screenshot.png)
+![Screenshot of the advanced number field](https://github.com/simplesquid/nova-advanced-number-field/raw/main/docs/screenshot.png)
 
 ## Installation
 
@@ -26,55 +28,23 @@ The `AdvancedNumber` field provides an additional 5 methods to the default `Numb
 - `->decimals(3)`: Sets the number of decimal points to be used as well as the step value.
 - `->suffix('%')`: Sets the suffix to be used when displaying the number.
 
-You can use the field in your Nova resource like so:
-
-```php
-namespace App\Nova;
-
-use SimpleSquid\Nova\Fields\AdvancedNumber\AdvancedNumber;
-
-class User extends Resource
-{
-    // ...
-
-    public function fields(Request $request)
-    {
-        return [
-            // ...
-
-            AdvancedNumber::make('Price')
-                ->prefix('$')
-                ->thousandsSeparator(','),
-
-            // AdvancedNumber extends Number, so you can use Number methods too:
-            AdvancedNumber::make('Markup')
-                ->decimals(0)
-                ->suffix('%')
-                ->min(0)->max(100),
-
-            // ...
-        ];
-    }
-}
-```
-
-### Testing
+## Testing
 
 ``` bash
 composer test
 ```
 
-### Changelog
+## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
 ## Contributing
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
 
-### Security
+## Security Vulnerabilities
 
-If you discover any security related issues, please email security@simplesquid.co.za instead of using the issue tracker.
+Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
 
 ## Credits
 
@@ -85,7 +55,7 @@ Package skeleton based on [spatie/skeleton-php](https://github.com/spatie/skelet
 
 ## About us
 
-SimpleSquid is a small web development and design company based in Cape Town, South Africa.
+SimpleSquid is a small web development and design company based in Valkenburg, Netherlands.
 
 ## License
 

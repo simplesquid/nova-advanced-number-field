@@ -1,14 +1,12 @@
 <?php
 
-namespace SimpleSquid\Skeleton\Tests;
+namespace SimpleSquid\Nova\Fields\AdvancedNumber\Tests;
 
-use PHPUnit\Framework\TestCase;
 use SimpleSquid\Nova\Fields\AdvancedNumber\AdvancedNumber;
 
 class AdvancedNumberTest extends TestCase
 {
-    /** @var \SimpleSquid\Nova\Fields\AdvancedNumber\AdvancedNumber */
-    private $field;
+    private AdvancedNumber $field;
 
     public function setUp(): void
     {
@@ -26,9 +24,9 @@ class AdvancedNumberTest extends TestCase
     /** @test */
     public function field_defaults_to_step_of_two_decimal_places()
     {
-        $this->assertArrayHasKey('step', $this->field->meta);
+        $this->assertObjectHasAttribute('step', $this->field);
 
-        $this->assertEquals('0.01', $this->field->meta['step']);
+        $this->assertEquals('0.01', $this->field->step);
     }
 
     /** @test */
@@ -36,7 +34,7 @@ class AdvancedNumberTest extends TestCase
     {
         $this->field->resolveForDisplay(['number_field' => 12345.678]);
 
-        $this->assertEquals('12 345.68', $this->field->value);
+        $this->assertEquals('12 345.68', $this->field->displayedAs ?? $this->field->value);
     }
 
     /** @test */
@@ -46,7 +44,7 @@ class AdvancedNumberTest extends TestCase
 
         $this->field->resolveForDisplay(['number_field' => 12345.678]);
 
-        $this->assertEquals('$12 345.68', $this->field->value);
+        $this->assertEquals('$12 345.68', $this->field->displayedAs ?? $this->field->value);
     }
 
     /** @test */
@@ -56,7 +54,7 @@ class AdvancedNumberTest extends TestCase
 
         $this->field->resolveForDisplay(['number_field' => 12345.678]);
 
-        $this->assertEquals('12 345.68%', $this->field->value);
+        $this->assertEquals('12 345.68%', $this->field->displayedAs ?? $this->field->value);
     }
 
     /** @test */
@@ -66,7 +64,7 @@ class AdvancedNumberTest extends TestCase
 
         $this->field->resolveForDisplay(['number_field' => 12345.678]);
 
-        $this->assertEquals('12 345.678', $this->field->value);
+        $this->assertEquals('12 345.678', $this->field->displayedAs ?? $this->field->value);
     }
 
     /** @test */
@@ -76,7 +74,7 @@ class AdvancedNumberTest extends TestCase
 
         $this->field->resolveForDisplay(['number_field' => 12345.678]);
 
-        $this->assertEquals('12 345,68', $this->field->value);
+        $this->assertEquals('12 345,68', $this->field->displayedAs ?? $this->field->value);
     }
 
     /** @test */
@@ -86,7 +84,7 @@ class AdvancedNumberTest extends TestCase
 
         $this->field->resolveForDisplay(['number_field' => 12345.678]);
 
-        $this->assertEquals('12,345.68', $this->field->value);
+        $this->assertEquals('12,345.68', $this->field->displayedAs ?? $this->field->value);
     }
 
     /** @test */
@@ -108,7 +106,7 @@ class AdvancedNumberTest extends TestCase
 
         $this->field->resolveForDisplay(['number_field' => 12345.678]);
 
-        $this->assertEquals('$12,345 and 68c', $this->field->value);
+        $this->assertEquals('$12,345 and 68c', $this->field->displayedAs ?? $this->field->value);
 
         $this->field->resolve(['number_field' => 12345.678]);
 

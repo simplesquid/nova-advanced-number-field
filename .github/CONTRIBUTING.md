@@ -27,4 +27,3 @@ Before submitting a pull request:
 - **One pull request per feature**: If you want to do more than one thing, send multiple pull requests.
 
 - **Coherent history**: Make sure each individual commit in your pull request is meaningful. If you had to make multiple intermediate commits while developing, please [squash them](https://www.git-scm.com/book/en/v2/Git-Tools-Rewriting-History#Changing-Multiple-Commit-Messages) before submitting.
- 

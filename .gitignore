@@ -9,6 +9,12 @@ node_modules
 phpunit.xml
 .phpunit.*
 build
+coverage
+
+.php_cs
+.php_cs.cache
+psalm.xml
+.php-cs-fixer.cache
 
 .idea
 
@@ -16,4 +22,3 @@ build
 Thumbs.db
 
 mix-manifest.json
-

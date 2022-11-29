@@ -1,7 +1,4 @@
 <?php
-/**
- * Copyright (c) 2019 Matthew Poulter. All rights reserved.
- */
 
 namespace SimpleSquid\Nova\Fields\AdvancedNumber;
 
@@ -11,49 +8,39 @@ class AdvancedNumber extends Number
 {
     /**
      * The prefix to be used when displaying the number.
-     *
-     * @var string
      */
-    private $prefix = '';
+    private string $prefix = '';
 
     /**
      * The number of decimals to be displayed.
-     *
-     * @var int
      */
-    private $decimals = 2;
+    private int $decimals = 2;
 
     /**
      * The decimal point to be used when displaying the number.
-     *
-     * @var string
      */
-    private $dec_point = '.';
+    private string $dec_point = '.';
 
     /**
      * The thousands separator to be used when displaying the number.
-     *
-     * @var string
      */
-    private $thousands_sep = ' ';
+    private string $thousands_sep = ' ';
 
     /**
      * The suffix to be used when displaying the number.
-     *
-     * @var string
      */
-    private $suffix = '';
+    private string $suffix = '';
 
     /**
      * Create a new field.
      *
-     * @param  string       $name
-     * @param  string|null  $attribute
-     * @param  mixed|null   $resolveCallback
+     * @param  string  $name
+     * @param  string|\Closure|callable|object|null  $attribute
+     * @param  (callable(mixed, mixed, ?string):(mixed))|null  $resolveCallback
      *
      * @return void
      */
-    public function __construct($name, $attribute = null, $resolveCallback = null)
+    public function __construct($name, $attribute = null, callable $resolveCallback = null)
     {
         parent::__construct($name, $attribute, $resolveCallback);
 
@@ -66,12 +53,8 @@ class AdvancedNumber extends Number
 
     /**
      * Sets the decimal point symbol to be used when displaying the number.
-     *
-     * @param  string  $dec_point
-     *
-     * @return $this
      */
-    public function decimalPoint($dec_point)
+    public function decimalPoint(string $dec_point): static
     {
         $this->dec_point = $dec_point;
 
@@ -80,12 +63,8 @@ class AdvancedNumber extends Number
 
     /**
      * Sets the number of decimal points to be used as well as the step value.
-     *
-     * @param  int  $decimals
-     *
-     * @return $this
      */
-    public function decimals($decimals)
+    public function decimals(int $decimals): static
     {
         $this->decimals = $decimals;
 
@@ -96,12 +75,8 @@ class AdvancedNumber extends Number
 
     /**
      * Sets the prefix to be used when displaying the number.
-     *
-     * @param  string  $prefix
-     *
-     * @return $this
      */
-    public function prefix($prefix)
+    public function prefix(string $prefix): static
     {
         $this->prefix = $prefix;
 
@@ -110,12 +85,8 @@ class AdvancedNumber extends Number
 
     /**
      * Sets the suffix to be used when displaying the number.
-     *
-     * @param  string  $suffix
-     *
-     * @return $this
      */
-    public function suffix($suffix)
+    public function suffix(string $suffix): static
     {
         $this->suffix = $suffix;
 
@@ -124,12 +95,8 @@ class AdvancedNumber extends Number
 
     /**
      * Set the thousands separator symbol to be used when displaying the number.
-     *
-     * @param  string  $thousands_sep
-     *
-     * @return $this
      */
-    public function thousandsSeparator($thousands_sep)
+    public function thousandsSeparator(string $thousands_sep): static
     {
         $this->thousands_sep = $thousands_sep;
 
