@@ -1,0 +1,33 @@
+name: Code styling
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  style:
+    name: Check code styling
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📚 Checkout code
+        uses: actions/checkout@v3
+
+      - name: 🔥 Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.1
+          coverage: none
+          tools: cs2pr, pint
+
+      - name: 📝 Run Laravel Pint
+        id: run-pint
+        run: pint --test
+
+      - name: 📝 Generate GitHub annotations
+        if: failure() && steps.run-pint.outcome != 'success'
+        run: pint --test --format=checkstyle | cs2pr

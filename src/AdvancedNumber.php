@@ -37,7 +37,6 @@ class AdvancedNumber extends Number
      * @param  string  $name
      * @param  string|\Closure|callable|object|null  $attribute
      * @param  (callable(mixed, mixed, ?string):(mixed))|null  $resolveCallback
-     *
      * @return void
      */
     public function __construct($name, $attribute = null, callable $resolveCallback = null)
@@ -47,7 +46,7 @@ class AdvancedNumber extends Number
         $this->decimals($this->decimals)
              ->textAlign('right')
              ->displayUsing(function ($value) {
-                 return ! is_null($value) ? $this->prefix . number_format($value, $this->decimals, $this->dec_point, $this->thousands_sep) . $this->suffix : null;
+                 return ! is_null($value) ? $this->prefix.number_format($value, $this->decimals, $this->dec_point, $this->thousands_sep).$this->suffix : null;
              });
     }
 

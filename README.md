@@ -1,8 +1,8 @@
 # An advanced number field for Laravel Nova
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/simplesquid/nova-advanced-number-field.svg?style=flat-square)](https://packagist.org/packages/simplesquid/nova-advanced-number-field)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/simplesquid/nova-advanced-number-field/Run%20tests?label=tests)](https://github.com/simplesquid/nova-advanced-number-field/actions?query=workflow%3A"Run+tests"+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/simplesquid/nova-advanced-number-field/Check%20&%20fix%20styling?label=code%20style)](https://github.com/simplesquid/nova-advanced-number-field/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
+[![Tests](https://github.com/simplesquid/nova-advanced-number-field/actions/workflows/run-tests.yml/badge.svg)](https://github.com/simplesquid/nova-advanced-number-field/actions/workflows/run-tests.yml)
+[![Code styling](https://github.com/simplesquid/nova-advanced-number-field/actions/workflows/code-style.yml/badge.svg)](https://github.com/simplesquid/nova-advanced-number-field/actions/workflows/code-style.yml)
 [![MIT License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Total Downloads](https://img.shields.io/packagist/dt/simplesquid/nova-advanced-number-field.svg?style=flat-square)](https://packagist.org/packages/simplesquid/nova-advanced-number-field)
 
