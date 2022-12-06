@@ -34,7 +34,7 @@
         "laravel/pint": "^1.2",
         "nunomaduro/collision": "^6.1",
         "orchestra/testbench": "^7.0",
-        "phpunit/phpunit": "^9.3.3",
+        "phpunit/phpunit": "^9.5.10",
         "symfony/var-dumper": "^6.0"
     },
     "autoload": {

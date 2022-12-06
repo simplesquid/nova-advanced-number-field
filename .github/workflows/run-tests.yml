@@ -49,5 +49,3 @@ jobs:
 
       - name: 🧪 Run test suite
         run: ./vendor/bin/phpunit
-        env:
-          DB_PORT: 3306
