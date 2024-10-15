@@ -39,15 +39,15 @@ class AdvancedNumber extends Number
      * @param  (callable(mixed, mixed, ?string):(mixed))|null  $resolveCallback
      * @return void
      */
-    public function __construct($name, $attribute = null, callable $resolveCallback = null)
+    public function __construct($name, $attribute = null, ?callable $resolveCallback = null)
     {
         parent::__construct($name, $attribute, $resolveCallback);
 
         $this->decimals($this->decimals)
-             ->textAlign('right')
-             ->displayUsing(function ($value) {
-                 return ! is_null($value) ? $this->prefix.number_format($value, $this->decimals, $this->dec_point, $this->thousands_sep).$this->suffix : null;
-             });
+            ->textAlign('right')
+            ->displayUsing(function ($value) {
+                return ! is_null($value) ? $this->prefix.number_format($value, $this->decimals, $this->dec_point, $this->thousands_sep).$this->suffix : null;
+            });
     }
 
     /**

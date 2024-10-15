@@ -1,6 +1,7 @@
 {
     "name": "simplesquid/nova-advanced-number-field",
     "description": "A Laravel Nova field which adds additional functionality to the default Number field.",
+    "license": "MIT",
     "keywords": [
         "simplesquid",
         "laravel",
@@ -9,8 +10,6 @@
         "number",
         "nova-advanced-number-field"
     ],
-    "homepage": "https://github.com/simplesquid/nova-advanced-number-field",
-    "license": "MIT",
     "authors": [
         {
             "name": "Matthew Poulter",
@@ -19,24 +18,27 @@
             "role": "Developer"
         }
     ],
+    "homepage": "https://github.com/simplesquid/nova-advanced-number-field",
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0 || ^11.0",
+        "laravel/nova": "^4.0"
+    },
+    "require-dev": {
+        "ergebnis/composer-normalize": "^2.44",
+        "laravel/pint": "^1.2",
+        "nunomaduro/collision": "^7.0 || ^8.0",
+        "orchestra/testbench": "^8.0 || ^9.0",
+        "phpunit/phpunit": "^10.1",
+        "symfony/var-dumper": "^6.0 || ^7.0"
+    },
     "repositories": [
         {
             "type": "composer",
             "url": "https://nova.laravel.com"
         }
     ],
-    "require": {
-        "php": "^8.0",
-        "illuminate/support": "^9.0|^10.0",
-        "laravel/nova": "^4.0"
-    },
-    "require-dev": {
-        "laravel/pint": "^1.2",
-        "nunomaduro/collision": "^6.1|^7.0",
-        "orchestra/testbench": "^7.0|^8.0",
-        "phpunit/phpunit": "^9.5.10",
-        "symfony/var-dumper": "^6.0"
-    },
+    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
             "SimpleSquid\\Nova\\Fields\\AdvancedNumber\\": "src"
@@ -47,6 +49,12 @@
             "SimpleSquid\\Nova\\Fields\\AdvancedNumber\\Tests\\": "tests"
         }
     },
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true
+        },
+        "sort-packages": true
+    },
     "extra": {
         "laravel": {
             "providers": []
@@ -54,9 +62,5 @@
     },
     "scripts": {
         "test": "vendor/bin/phpunit --colors=always"
-    },
-    "config": {
-        "sort-packages": true
-    },
-    "minimum-stability": "stable"
+    }
 }
