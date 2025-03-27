@@ -2,6 +2,7 @@
 
 namespace SimpleSquid\Nova\Fields\AdvancedNumber\Tests;
 
+use PHPUnit\Framework\Attributes\Test;
 use SimpleSquid\Nova\Fields\AdvancedNumber\AdvancedNumber;
 
 class AdvancedNumberTest extends TestCase
@@ -15,19 +16,19 @@ class AdvancedNumberTest extends TestCase
         $this->field = AdvancedNumber::make('Number Field');
     }
 
-    /** @test */
+    #[Test]
     public function field_defaults_to_right_alignment()
     {
         $this->assertEquals('right', $this->field->textAlign);
     }
 
-    /** @test */
+    #[Test]
     public function field_defaults_to_step_of_two_decimal_places()
     {
         $this->assertEquals('0.01', $this->field->step ?? $this->field->meta['step']);
     }
 
-    /** @test */
+    #[Test]
     public function field_displays_number_correctly_using_defaults()
     {
         $this->field->resolveForDisplay(['number_field' => 12345.678]);
@@ -35,7 +36,7 @@ class AdvancedNumberTest extends TestCase
         $this->assertEquals('12 345.68', $this->field->displayedAs ?? $this->field->value);
     }
 
-    /** @test */
+    #[Test]
     public function prefix_can_be_set_and_is_displayed()
     {
         $this->field->prefix('$');
@@ -45,7 +46,7 @@ class AdvancedNumberTest extends TestCase
         $this->assertEquals('$12 345.68', $this->field->displayedAs ?? $this->field->value);
     }
 
-    /** @test */
+    #[Test]
     public function suffix_can_be_set_and_is_displayed()
     {
         $this->field->suffix('%');
@@ -55,7 +56,7 @@ class AdvancedNumberTest extends TestCase
         $this->assertEquals('12 345.68%', $this->field->displayedAs ?? $this->field->value);
     }
 
-    /** @test */
+    #[Test]
     public function number_of_decimal_places_can_be_set_and_is_displayed()
     {
         $this->field->decimals(3);
@@ -65,7 +66,7 @@ class AdvancedNumberTest extends TestCase
         $this->assertEquals('12 345.678', $this->field->displayedAs ?? $this->field->value);
     }
 
-    /** @test */
+    #[Test]
     public function decimal_point_can_be_set_and_is_displayed()
     {
         $this->field->decimalPoint(',');
@@ -75,7 +76,7 @@ class AdvancedNumberTest extends TestCase
         $this->assertEquals('12 345,68', $this->field->displayedAs ?? $this->field->value);
     }
 
-    /** @test */
+    #[Test]
     public function thousands_separator_can_be_set_and_is_displayed()
     {
         $this->field->thousandsSeparator(',');
@@ -85,7 +86,7 @@ class AdvancedNumberTest extends TestCase
         $this->assertEquals('12,345.68', $this->field->displayedAs ?? $this->field->value);
     }
 
-    /** @test */
+    #[Test]
     public function field_resolves_to_actual_value_for_edit_view()
     {
         $this->field->resolve(['number_field' => 12345.678]);
@@ -93,7 +94,7 @@ class AdvancedNumberTest extends TestCase
         $this->assertEquals(12345.678, $this->field->value);
     }
 
-    /** @test */
+    #[Test]
     public function modifiers_can_be_used_together()
     {
         $this->field->prefix('$');
